@@ -1,0 +1,27 @@
+{
+  "name": "endiom",
+  "version": "1.0.0",
+  "description": "English idioms services",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/khaind/endiom.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/khaind/endiom/issues"
+  },
+  "homepage": "https://github.com/khaind/endiom#readme",
+  "dependencies": {
+    "dotenv": "^8.2.0",
+    "faker": "^4.1.0"
+  },
+  "devDependencies": {
+    "@types/node": "^13.9.1"
+  }
+}

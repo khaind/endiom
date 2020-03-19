@@ -1,5 +1,6 @@
 import {Router} from "express";
 import user from "./user";
+import idiom from "./idiom";
 
 const routes = Router();
 
@@ -15,5 +16,6 @@ routes.get('/ping', (req, res) => {
 })
 
 routes.use("/user", user);
+routes.use("/idiom", idiom);
 
 export default routes;

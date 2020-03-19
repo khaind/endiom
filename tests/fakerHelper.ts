@@ -15,7 +15,7 @@ const generateIdiom = (id: number) => {
       idiom: faker.lorem.words(),
       meaning: faker.lorem.sentence(),
       origin: faker.lorem.paragraph(),
-      example: faker.lorem.paragraph(),
+      sample: faker.lorem.paragraph(),
       authorId: 1 // admin
       // TODO comments
     }

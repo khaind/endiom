@@ -4,10 +4,12 @@ import {
   Column,
   Unique,
   CreateDateColumn,
-  UpdateDateColumn
+  UpdateDateColumn,
+  OneToMany
 } from "typeorm";
-import {Length, IsNotEmpty, IsDefined} from "class-validator";
+import { Length, IsNotEmpty, IsDefined } from "class-validator";
 import * as bcrypt from "bcryptjs";
+import { Idiom } from "./Idiom";
 
 @Entity()
 @Unique(["userName"])
@@ -25,6 +27,9 @@ export class User {
 
   @Column()
   email!: string;
+
+  @OneToMany(type => Idiom, idiom => idiom.user)
+  idioms!: Idiom[];
 
   @Column()
   @CreateDateColumn()

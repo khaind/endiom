@@ -3,6 +3,7 @@ import { createConnection } from "typeorm";
 import * as express from "express";
 import * as helmet from "helmet";
 import * as cors from "cors";
+require("dotenv").config();
 import routes from "./routes";
 
 // Connect to mysql 5.7 db
@@ -19,8 +20,9 @@ createConnection()
 
     app.use("/", routes);
 
-    app.listen(3333, () => {
-      console.info('Server started on port 3333!');
+    const port = process.env.PORT || 3333
+    app.listen(port, () => {
+      console.info(`Server started on port ${port}!`);
     })
   })
   .catch(error => console.error(error));

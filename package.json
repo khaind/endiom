@@ -6,7 +6,7 @@
   "scripts": {
     "dev": "set debug=* && ts-node-dev --respawn --transpileOnly ./src/index.ts",
     "build": "tsc",
-    "start": "tsc && cd dist && node src/index.js",
+    "start": "tsc && node dist/src/index.js",
     "migration:run": "ts-node ./node_modules/typeorm/cli.js migration:run",
     "test": "echo \"Error: no test specified\" && exit 1"
   },

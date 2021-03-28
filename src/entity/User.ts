@@ -1,18 +1,18 @@
+import * as bcrypt from 'bcryptjs';
+import { IsDefined } from 'class-validator';
 import {
-  Entity,
-  PrimaryGeneratedColumn,
   Column,
-  Unique,
   CreateDateColumn,
+  Entity,
+  OneToMany,
+  PrimaryGeneratedColumn,
+  Unique,
   UpdateDateColumn,
-  OneToMany
-} from "typeorm";
-import { Length, IsNotEmpty, IsDefined } from "class-validator";
-import * as bcrypt from "bcryptjs";
-import { Idiom } from "./Idiom";
+} from 'typeorm';
+import { Idiom } from './Idiom';
 
 @Entity()
-@Unique(["userName"])
+@Unique(['userName'])
 export class User {
   @PrimaryGeneratedColumn()
   id!: number;
@@ -28,7 +28,7 @@ export class User {
   @Column()
   email!: string;
 
-  @OneToMany(type => Idiom, idiom => idiom.user)
+  @OneToMany((type) => Idiom, (idiom) => idiom.user)
   idioms!: Idiom[];
 
   @Column()
@@ -40,7 +40,8 @@ export class User {
   updateAt!: Date;
 
   // TODO should be pre-save middleware
-  hashPassword () {
+  hashPassword() {
     this.password = bcrypt.hashSync(this.password, 8);
   }
 }
+

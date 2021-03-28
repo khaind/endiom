@@ -5,13 +5,13 @@ import {
   Unique,
   CreateDateColumn,
   UpdateDateColumn,
-  ManyToOne
-} from "typeorm";
-import {Length, IsNotEmpty, IsDefined} from "class-validator";
-import { User } from "./User";
+  ManyToOne,
+} from 'typeorm';
+import { Length, IsNotEmpty, IsDefined } from 'class-validator';
+import { User } from './User';
 
 @Entity()
-@Unique(["idiom"])
+@Unique(['idiom'])
 export class Idiom {
   @PrimaryGeneratedColumn()
   id!: number;
@@ -20,17 +20,17 @@ export class Idiom {
   @IsDefined()
   idiom!: string;
 
-  @Column("mediumtext")
+  @Column('mediumtext')
   @IsDefined()
   meaning!: string;
 
-  @Column("longtext")
+  @Column('longtext')
   origin!: string;
 
-  @Column("longtext")
+  @Column('longtext')
   sample!: string;
 
- @ManyToOne(type => User, user => user.idioms)
+  @ManyToOne((type) => User, (user) => user.idioms)
   user!: User;
 
   @Column()
@@ -41,3 +41,4 @@ export class Idiom {
   @UpdateDateColumn()
   updateAt!: Date;
 }
+

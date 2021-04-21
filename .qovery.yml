@@ -1,0 +1,11 @@
+---
+application:
+  name: "endiom"
+  project: "endiom"
+  organization: "QoveryCommunity"
+routers:
+- name: "main-endiom"
+  routes:
+  - application_name: "endiom"
+    paths:
+    - "/*"
